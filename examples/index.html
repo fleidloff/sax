@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="../node_modules/raphael/raphael.js" type="text/javascript"></script>
-        <script src="../node_modules/teoria/dist/teoria.js" type="text/javascript"></script>
-        <script src="../dist/fingerings.js" type="text/javascript"></script>
+        <script src="../dist/fingerings.full.min.js" type="text/javascript"></script>
 
         <script src="script/app.js" type="text/javascript"></script>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
     </head> 
     <body>
         <div id="sax-container"></div>
+        <input type="text" id="note" value="c5" oninput="inputChange(this.value, this);" />
     </body>
 </html>
