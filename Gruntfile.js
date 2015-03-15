@@ -16,23 +16,39 @@ module.exports = function(grunt) {
                 report: "min"
             },
             dist: {
-                src: "<%= concat.target.dest %>",
+                src: "dist/fingerings.js",
                 dest: "dist/fingerings.min.js"
-            }
+            },
+            full: {
+                src: "dist/fingerings.full.js",
+                dest: "dist/fingerings.full.min.js"
+            }    
+            
         },
         concat: {
             options: {
                 banner: "<%= banner %>"
             },
-            target: {
-                dest: "dist/fingerings.js",
+            dist: {
+                dest: "./dist/fingerings.js",
                 src: [
                     "./src/banner.js",
                     "./src/fingerings/*.js",
                     "./src/sax/*.js",
                     "./src/footer.js"
                 ]
-            }
+            },
+            full: {
+                dest: "./dist/fingerings.full.js",
+                src: [
+                    "./node_modules/raphael/raphael.js",
+                    "./node_modules/teoria/dist/teoria.js",
+                    "./src/banner.js",
+                    "./src/fingerings/*.js",
+                    "./src/sax/*.js",
+                    "./src/footer.js"
+                ]
+            }    
         },
         jshint: {
           files: ["src/**/*.js", "!src/*.js"],
